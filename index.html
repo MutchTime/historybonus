@@ -2,130 +2,139 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>История Бонусов</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>История бонусов — Партнёры</title>
   <style>
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
       background-color: #ffffff;
       color: #000000;
+      margin: 0;
+      padding: 0;
     }
-
     header {
-      background-color: #16a085;
-      color: white;
-      padding: 20px;
+      background-color: #2e7d32;
+      color: #ffffff;
+      padding: 1rem;
       text-align: center;
-      font-size: 24px;
     }
-
-    .container {
-      max-width: 800px;
-      margin: 30px auto 80px auto;
-      padding: 20px;
-      border: 2px solid #16a085;
-      border-radius: 10px;
+    main {
+      padding: 2rem;
     }
-
-    .bonus-entry {
-      border-bottom: 1px solid #16a085;
-      padding: 15px 0;
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
     }
-
-    .bonus-entry:last-child {
-      border-bottom: none;
+    th, td {
+      border: 1px solid #cccccc;
+      padding: 0.5rem;
+      text-align: left;
     }
-
-    .bonus-date {
-      font-weight: bold;
-      color: #333;
+    th {
+      background-color: #a5d6a7;
     }
-
-    .bonus-description {
-      margin: 5px 0;
+    .filters, .export {
+      margin-top: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
     }
-
-    .bonus-amount {
-      color: #2ecc71;
+    label {
+      display: block;
       font-weight: bold;
     }
-
-    .back-button {
-      position: fixed;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      padding: 12px 24px;
-      background-color: #16a085;
+    input, select, button {
+      padding: 0.5rem;
+      font-size: 1rem;
+      border: 1px solid #cccccc;
+      border-radius: 4px;
+    }
+    button {
+      background-color: #2e7d32;
       color: white;
-      border: none;
-      border-radius: 30px;
-      font-size: 16px;
-      text-decoration: none;
-      text-align: center;
       cursor: pointer;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-      transition: background-color 0.3s ease;
-      z-index: 1000;
     }
-
-    .back-button:hover {
-      background-color: #16a085;
+    button:hover {
+      background-color: #1b5e20;
     }
   </style>
 </head>
 <body>
-
   <header>
-    История Получения Бонусов
+    <h1>История выданных бонусов</h1>
   </header>
+  <main>
+    <section class="filters">
+      <div>
+        <label for="from-date">С даты:</label>
+        <input type="date" id="from-date" name="from-date">
+      </div>
+      <div>
+        <label for="to-date">По дату:</label>
+        <input type="date" id="to-date" name="to-date">
+      </div>
+      <div>
+        <label for="bonus-type">Тип бонуса:</label>
+        <select id="bonus-type">
+          <option value="">Все</option>
+          <option value="discount">Скидка</option>
+          <option value="points">Баллы</option>
+        </select>
+      </div>
+      <div>
+        <label for="status">Статус:</label>
+        <select id="status">
+          <option value="">Все</option>
+          <option value="used">Использован</option>
+          <option value="active">Активен</option>
+          <option value="expired">Просрочен</option>
+        </select>
+      </div>
+      <div>
+        <label for="search-client">Клиент:</label>
+        <input type="text" id="search-client" placeholder="ФИО, email, ID">
+      </div>
+      <div>
+        <button>Поиск</button>
+      </div>
+    </section>
 
-  <div class="container" id="bonus-container">
-    <div>Загрузка истории...</div>
-  </div>
+    <section class="export">
+      <button>Экспорт в Excel</button>
+      <button>Экспорт в PDF</button>
+    </section>
 
-  <!-- Зафиксированная кнопка -->
-  <a href="index.html" class="back-button">Вернуться на главную</a>
-
-  <script>
-    async function fetchBonusHistory() {
-      const data = [
-        {
-          datetime: "23 апреля 2025, 14:35",
-          description: "Вам зачислено за задание «Оставить отзыв»",
-          amount: "+50 бонусов"
-        },
-        {
-          datetime: "21 апреля 2025, 09:12",
-          description: "Вам зачислено за приглашение друга: Иван",
-          amount: "+100 бонусов"
-        },
-        {
-          datetime: "18 апреля 2025, 08:00",
-          description: "Вам зачислено за ежедневный вход в систему",
-          amount: "+10 бонусов"
-        }
-      ];
-
-      const container = document.getElementById("bonus-container");
-      container.innerHTML = "";
-
-      data.forEach(entry => {
-        const div = document.createElement("div");
-        div.className = "bonus-entry";
-        div.innerHTML = `
-          <div class="bonus-date">${entry.datetime}</div>
-          <div class="bonus-description">${entry.description}</div>
-          <div class="bonus-amount">${entry.amount}</div>
-        `;
-        container.appendChild(div);
-      });
-    }
-
-    fetchBonusHistory();
-    setInterval(fetchBonusHistory, 10000);
-  </script>
-
+    <table>
+      <thead>
+        <tr>
+          <th>Дата выдачи</th>
+          <th>Клиент</th>
+          <th>Тип бонуса</th>
+          <th>Сумма / %</th>
+          <th>Статус</th>
+          <th>Дата использования</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>12.04.2025</td>
+          <td>Иванов И.И.</td>
+          <td>Скидка 10%</td>
+          <td>—</td>
+          <td>Использован</td>
+          <td>15.04.2025</td>
+        </tr>
+        <tr>
+          <td>14.04.2025</td>
+          <td>Петрова А.А.</td>
+          <td>100 бонусов</td>
+          <td>100</td>
+          <td>Активен</td>
+          <td>—</td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
 </body>
 </html>
