@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>История бонусов — Партнёры</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Панель партнёра — Волонтёры</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -13,149 +13,83 @@
       padding: 0;
     }
     header {
-      background-color: #16a085;
-      color: #ffffff;
-      padding: 1rem;
+      background-color: #2e7d32;
+      color: white;
+      padding: 20px;
       text-align: center;
     }
     main {
-      padding: 2rem;
+      padding: 20px;
     }
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 1rem;
+      margin-top: 20px;
     }
     th, td {
-      border: 1px solid #cccccc;
-      padding: 0.5rem;
+      border: 1px solid #2e7d32;
+      padding: 10px;
       text-align: left;
     }
     th {
       background-color: #a5d6a7;
     }
-    .filters, .export {
-      margin-top: 1rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
+    h2 {
+      color: #2e7d32;
     }
-    label {
-      display: block;
-      font-weight: bold;
-    }
-    input, select, button {
-      padding: 0.5rem;
-      font-size: 1rem;
-      border: 1px solid #cccccc;
-      border-radius: 4px;
-    }
-    button {
-      background-color: #16a085;
-      color: white;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #1b5e20;
-    }
-    .back-to-top {
-      position: fixed;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: #16a085;
-      color: #ffffff;
-      padding: 0.75rem 1.25rem;
-      border: none;
-      border-radius: 5px;
-      font-size: 1rem;
-      cursor: pointer;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
-    .back-to-top:hover {
-      background-color: #1b5e20;
+    .bonus {
+      background-color: #e8f5e9;
+      padding: 10px;
+      margin: 10px 0;
+      border-left: 5px solid #2e7d32;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>История выданных бонусов</h1>
+    <h1>Панель предприятия-партнёра</h1>
+    <p>Просмотр волонтёров, их достижений и бонусов</p>
   </header>
   <main>
-    <section class="filters">
-      <div>
-        <label for="from-date">С даты:</label>
-        <input type="date" id="from-date" name="from-date">
-      </div>
-      <div>
-        <label for="to-date">По дату:</label>
-        <input type="date" id="to-date" name="to-date">
-      </div>
-      <div>
-        <label for="bonus-type">Тип бонуса:</label>
-        <select id="bonus-type">
-          <option value="">Все</option>
-          <option value="discount">Скидка</option>
-          <option value="points">Баллы</option>
-        </select>
-      </div>
-      <div>
-        <label for="status">Статус:</label>
-        <select id="status">
-          <option value="">Все</option>
-          <option value="used">Использован</option>
-          <option value="active">Активен</option>
-          <option value="expired">Просрочен</option>
-        </select>
-      </div>
-      <div>
-        <label for="search-client">Клиент:</label>
-        <input type="text" id="search-client" placeholder="ФИО, email, ID">
-      </div>
-      <div>
-        <button>Поиск</button>
-      </div>
-    </section>
-
-    <section class="export">
-      <button>Экспорт в Excel</button>
-      <button>Экспорт в PDF</button>
-    </section>
-
+    <h2>Список волонтёров</h2>
     <table>
       <thead>
         <tr>
-          <th>Дата выдачи</th>
-          <th>Клиент</th>
-          <th>Тип бонуса</th>
-          <th>Сумма / %</th>
+          <th>ФИО</th>
+          <th>Образование</th>
           <th>Статус</th>
-          <th>Дата использования</th>
+          <th>Часы</th>
+          <th>Достижения</th>
+          <th>Бонусы</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>12.04.2025</td>
-          <td>Иванов И.И.</td>
-          <td>Скидка 10%</td>
-          <td>—</td>
-          <td>Использован</td>
-          <td>15.04.2025</td>
+          <td>Иванов Иван</td>
+          <td>ДонНТУ, Системное программирование</td>
+          <td>Активен</td>
+          <td>120 ч</td>
+          <td>Участие в "Эко-день", грамота</td>
+          <td>Скидка 10%, стажировка</td>
         </tr>
         <tr>
-          <td>14.04.2025</td>
-          <td>Петрова А.А.</td>
-          <td>100 бонусов</td>
-          <td>100</td>
-          <td>Активен</td>
-          <td>—</td>
+          <td>Петрова Анна</td>
+          <td>ДонНТУ, Менеджмент</td>
+          <td>На паузе</td>
+          <td>75 ч</td>
+          <td>Организация мероприятий</td>
+          <td>Подарок, скидка 5%</td>
         </tr>
       </tbody>
     </table>
-  </main>
 
-  <button class="back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
-    Вернуться на главный экран
-  </button>
+    <h2>Добавленные бонусы от вашего предприятия</h2>
+    <div class="bonus">
+      ✅ Бесплатная экскурсия на производство
+    </div>
+    <div class="bonus">
+      ✅ Стажировка с возможностью трудоустройства
+    </div>
+  </main>
 </body>
 </html>
