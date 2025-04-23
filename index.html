@@ -1,1 +1,52 @@
+import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { CalendarDays, Coins } from "lucide-react";
 
+const bonusHistory = [
+  {
+    id: 1,
+    date: "2025-04-01",
+    description: "Бонус за регистрацию",
+    amount: 100,
+  },
+  {
+    id: 2,
+    date: "2025-04-10",
+    description: "Участие в акции «Весенний марафон»",
+    amount: 250,
+  },
+  {
+    id: 3,
+    date: "2025-04-20",
+    description: "Промокод от друга",
+    amount: 50,
+  },
+];
+
+export default function BonusHistory() {
+  return (
+    <div className="min-h-screen bg-gray-100 p-4">
+      <h1 className="text-3xl font-bold mb-6">История бонусов</h1>
+      <div className="grid gap-4">
+        {bonusHistory.map((bonus) => (
+          <Card key={bonus.id} className="rounded-2xl shadow-md">
+            <CardContent className="p-4 flex flex-col sm:flex-row sm:justify-between sm:items-center">
+              <div className="mb-2 sm:mb-0">
+                <div className="text-xl font-semibold">{bonus.description}</div>
+                <div className="text-sm text-gray-500 flex items-center gap-1">
+                  <CalendarDays className="w-4 h-4" />
+                  {bonus.date}
+                </div>
+              </div>
+              <Badge className="text-lg flex items-center gap-1">
+                <Coins className="w-5 h-5" />
+                +{bonus.amount}
+              </Badge>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+    </div>
+  );
+}
