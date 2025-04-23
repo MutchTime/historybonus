@@ -43,6 +43,22 @@
       margin: 10px 0;
       border-left: 5px solid #2e7d32;
     }
+    .fixed-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #2e7d32;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      font-size: 16px;
+    }
+    .fixed-button:hover {
+      background-color: #1b5e20;
+    }
   </style>
 </head>
 <body>
@@ -82,14 +98,7 @@
         </tr>
       </tbody>
     </table>
-
-    <h2>Добавленные бонусы от вашего предприятия</h2>
-    <div class="bonus">
-      ✅ Бесплатная экскурсия на производство
-    </div>
-    <div class="bonus">
-      ✅ Стажировка с возможностью трудоустройства
-    </div>
   </main>
+  <button class="fixed-button" onclick="window.location.href='index.html'">Вернуться на главный экран</button>
 </body>
 </html>
