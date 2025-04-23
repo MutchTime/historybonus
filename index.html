@@ -13,7 +13,7 @@
     }
 
     header {
-      background-color: #16a085; /* зелёный */
+      background-color: #16a085;
       color: white;
       padding: 20px;
       text-align: center;
@@ -57,25 +57,56 @@
     История Получения Бонусов
   </header>
 
-  <div class="container">
-    <div class="bonus-entry">
-      <div class="bonus-date">23 апреля 2025</div>
-      <div class="bonus-description">Завершено задание "Оставить отзыв"</div>
-      <div class="bonus-amount">+50 бонусов</div>
-    </div>
-
-    <div class="bonus-entry">
-      <div class="bonus-date">21 апреля 2025</div>
-      <div class="bonus-description">Приглашён друг: Иван</div>
-      <div class="bonus-amount">+100 бонусов</div>
-    </div>
-
-    <div class="bonus-entry">
-      <div class="bonus-date">18 апреля 2025</div>
-      <div class="bonus-description">Ежедневный вход в систему</div>
-      <div class="bonus-amount">+10 бонусов</div>
-    </div>
+  <div class="container" id="bonus-container">
+    <div>Загрузка истории...</div>
   </div>
+
+  <script>
+    async function fetchBonusHistory() {
+      // Имитация запроса на сервер
+      // В реальности это будет: const response = await fetch('/api/bonus-history');
+      // const data = await response.json();
+
+      // Временные данные для демонстрации:
+      const data = [
+        {
+          date: "23 апреля 2025",
+          description: "Вам зачислено за задание «Оставить отзыв»",
+          amount: "+50 бонусов"
+        },
+        {
+          date: "21 апреля 2025",
+          description: "Вам зачислено за приглашение друга: Иван",
+          amount: "+100 бонусов"
+        },
+        {
+          date: "18 апреля 2025",
+          description: "Вам зачислено за ежедневный вход в систему",
+          amount: "+10 бонусов"
+        }
+      ];
+
+      const container = document.getElementById("bonus-container");
+      container.innerHTML = ""; // Очистить контейнер
+
+      data.forEach(entry => {
+        const div = document.createElement("div");
+        div.className = "bonus-entry";
+        div.innerHTML = `
+          <div class="bonus-date">${entry.date}</div>
+          <div class="bonus-description">${entry.description}</div>
+          <div class="bonus-amount">${entry.amount}</div>
+        `;
+        container.appendChild(div);
+      });
+    }
+
+    // Загружаем историю при загрузке страницы
+    fetchBonusHistory();
+
+    // Автоматическое обновление истории каждые 10 секунд
+    setInterval(fetchBonusHistory, 10000);
+  </script>
 
 </body>
 </html>
