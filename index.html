@@ -6,36 +6,43 @@
   <title>Личный кабинет</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #ffffff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #eaeef3;
       color: #000000;
       margin: 0;
       padding: 0;
     }
+    .header {
+      background-color: #4a76a8;
+      padding: 15px;
+      text-align: center;
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+    }
     .container {
       max-width: 600px;
-      margin: 50px auto;
+      margin: 30px auto;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       padding: 20px;
-      background-color: #e0f7e9;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    h1 {
-      text-align: center;
-      color: #2e7d32;
     }
     .info-item {
-      margin: 15px 0;
+      padding: 10px 0;
+      border-bottom: 1px solid #e0e0e0;
     }
     .label {
       font-weight: bold;
-      color: #1b5e20;
+      display: inline-block;
+      width: 150px;
+      color: #2c3e50;
     }
   </style>
 </head>
 <body>
+  <div class="header">Личный кабинет</div>
   <div class="container">
-    <h1>Личный кабинет</h1>
     <div class="info-item">
       <span class="label">ФИО:</span> Иванов Иван Иванович
     </div>
