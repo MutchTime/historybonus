@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Панель партнёра — Волонтёры</title>
+  <title>Личный кабинет</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -12,94 +12,48 @@
       margin: 0;
       padding: 0;
     }
-    header {
-      background-color: #16a085;
-      color: white;
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
       padding: 20px;
+      background-color: #e0f7e9;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
       text-align: center;
-    }
-    main {
-      padding: 20px;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-    }
-    th, td {
-      border: 1px solid #16a085;
-      padding: 10px;
-      text-align: left;
-    }
-    th {
-      background-color: #a5d6a7;
-    }
-    h2 {
       color: #2e7d32;
     }
-    .bonus {
-      background-color: #e8f5e9;
-      padding: 10px;
-      margin: 10px 0;
-      border-left: 5px solid #16a085;
+    .info-item {
+      margin: 15px 0;
     }
-    .fixed-button {
-      position: fixed;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: #16a085;
-      color: white;
-      padding: 12px 20px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      font-size: 16px;
-    }
-    .fixed-button:hover {
-      background-color: #1b5e20;
+    .label {
+      font-weight: bold;
+      color: #1b5e20;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Панель предприятия-партнёра</h1>
-    <p>Просмотр волонтёров, их достижений и бонусов</p>
-  </header>
-  <main>
-    <h2>Список волонтёров</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>ФИО</th>
-          <th>Образование</th>
-          <th>Статус</th>
-          <th>Часы</th>
-          <th>Достижения</th>
-          <th>Бонусы</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Иванов Иван</td>
-          <td>ДонНТУ, Системное программирование</td>
-          <td>Активен</td>
-          <td>120 ч</td>
-          <td>Участие в "Эко-день", грамота</td>
-          <td>Скидка 10%, стажировка</td>
-        </tr>
-        <tr>
-          <td>Петрова Анна</td>
-          <td>ДонНТУ, Менеджмент</td>
-          <td>На паузе</td>
-          <td>75 ч</td>
-          <td>Организация мероприятий</td>
-          <td>Подарок, скидка 5%</td>
-        </tr>
-      </tbody>
-    </table>
-  </main>
-  <button class="fixed-button" onclick="window.location.href='index.html'">Вернуться на главный экран</button>
+  <div class="container">
+    <h1>Личный кабинет</h1>
+    <div class="info-item">
+      <span class="label">ФИО:</span> Иванов Иван Иванович
+    </div>
+    <div class="info-item">
+      <span class="label">Статус:</span> Волонтёр
+    </div>
+    <div class="info-item">
+      <span class="label">Количество баллов:</span> 120
+    </div>
+    <div class="info-item">
+      <span class="label">Доступно:</span> Бонусы на мероприятие, Сувениры
+    </div>
+    <div class="info-item">
+      <span class="label">Телефон:</span> +7 (900) 123-45-67
+    </div>
+    <div class="info-item">
+      <span class="label">Email:</span> ivanov@example.com
+    </div>
+  </div>
 </body>
 </html>
