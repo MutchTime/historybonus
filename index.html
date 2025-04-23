@@ -49,6 +49,26 @@
       color: #2ecc71;
       font-weight: bold;
     }
+
+    .back-button {
+      display: block;
+      width: fit-content;
+      margin: 20px auto 10px auto;
+      padding: 10px 20px;
+      background-color: #2ecc71;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      text-decoration: none;
+      text-align: center;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .back-button:hover {
+      background-color: #27ae60;
+    }
   </style>
 </head>
 <body>
@@ -57,17 +77,16 @@
     История Получения Бонусов
   </header>
 
+  <!-- Кнопка "Вернуться на главную" -->
+  <a href="index.html" class="back-button">← Вернуться на главную</a>
+
   <div class="container" id="bonus-container">
     <div>Загрузка истории...</div>
   </div>
 
   <script>
     async function fetchBonusHistory() {
-      // Имитация запроса на сервер
-      // В реальности это будет: const response = await fetch('/api/bonus-history');
-      // const data = await response.json();
-
-      // Временные данные для демонстрации:
+      // Временные данные (вместо реального API)
       const data = [
         {
           date: "23 апреля 2025",
@@ -87,7 +106,7 @@
       ];
 
       const container = document.getElementById("bonus-container");
-      container.innerHTML = ""; // Очистить контейнер
+      container.innerHTML = "";
 
       data.forEach(entry => {
         const div = document.createElement("div");
@@ -101,10 +120,7 @@
       });
     }
 
-    // Загружаем историю при загрузке страницы
     fetchBonusHistory();
-
-    // Автоматическое обновление истории каждые 10 секунд
     setInterval(fetchBonusHistory, 10000);
   </script>
 
