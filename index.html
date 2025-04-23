@@ -9,17 +9,21 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: white;
+            color: black;
         }
         .header {
             position: fixed;
             top: 0;
             right: 0;
-            background-color: #f4f4f4;
+            background-color: #4CAF50; /* Зеленый фон */
+            color: white;
             width: 100%;
-            padding: 10px;
+            padding: 15px;
             display: flex;
             justify-content: flex-end;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 10;
         }
         .header div {
             margin-left: 20px;
@@ -36,8 +40,25 @@
             margin-bottom: 5px;
         }
         .content {
-            margin-top: 60px; /* Чтобы не перекрывать контент шапкой */
+            margin-top: 100px; /* Чтобы не перекрывать контент шапкой */
             padding: 20px;
+        }
+        .return-button {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #4CAF50; /* Зеленая кнопка */
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .return-button:hover {
+            background-color: #45a049; /* Темнее зеленый при наведении */
         }
     </style>
 </head>
@@ -55,8 +76,11 @@
     </div>
 
     <div class="content">
-        <h1>Добро пожаловать на сайт</h1>
+        <!-- Контент страницы -->
         <p>Здесь будет содержимое вашего сайта.</p>
     </div>
+
+    <!-- Кнопка для возврата на главный экран -->
+    <button class="return-button" onclick="window.location.href='index.html';">Вернуться на главный экран</button>
 </body>
 </html>
