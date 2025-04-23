@@ -1,61 +1,86 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Профиль</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: white;
-      color: black;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Government Service Layout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
 
-    .header-info {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      text-align: right;
-      color: green;
-    }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            padding: 20px;
+        }
 
-    .header-info p {
-      margin: 4px 0;
-    }
+        .header {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            text-align: right;
+            color: #228B22; /* Green color */
+        }
 
-    .content {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      text-align: center;
-      padding-top: 80px;
-      color: black;
-    }
+        .header p {
+            margin: 5px 0;
+            font-size: 18px;
+        }
 
-    .extra-info {
-      max-width: 600px;
-      background-color: #e6f9e6;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-  </style>
+        .content {
+            text-align: center;
+            max-width: 800px;
+            margin-top: 100px;
+        }
+
+        .content h1 {
+            font-size: 32px;
+            color: #228B22;
+        }
+
+        .content p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-top: 10px;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 14px;
+            color: #888;
+        }
+    </style>
 </head>
 <body>
 
-  <div class="header-info">
-    <p><strong>ФИО:</strong> Иванов Иван Иванович</p>
-    <p>Волонтёр и партнёр</p>
-    <p><strong>Баллы:</strong> 120</p>
-  </div>
-
-  <div class="content">
-    <div class="extra-info">
-      <p>Дополнительная информация о пользователе, участии в проектах, достижениях и т.п.</p>
+    <div class="header">
+        <p><strong>ФИО:</strong> Иванов Иван Иванович</p>
+        <p><strong>Волонтер</strong></p>
+        <p><strong>Баллы:</strong> 120</p>
     </div>
-  </div>
+
+    <div class="container">
+        <div class="content">
+            <h1>Дополнительная информация</h1>
+            <p>Здесь отображается дополнительная информация, которую нужно разместить в центре страницы. Это может быть описание, детали и прочая информация, которая требуется пользователю для ознакомления.</p>
+            <p>Используйте этот шаблон для организации информации в правом верхнем углу и централизованного отображения основной информации на странице.</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2025 Все права защищены</p>
+    </div>
 
 </body>
 </html>
