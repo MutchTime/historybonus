@@ -1,76 +1,81 @@
-// src/App.jsx
-import React from "react";
-import "./App.css";
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>История Бонусов</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      color: #000000;
+    }
 
-const bonusHistory = [
-  {
-    id: 1,
-    date: "2025-04-01",
-    time: "10:23",
-    description: "Бонус за регистрацию",
-    amount: 100,
-  },
-  {
-    id: 2,
-    date: "2025-04-10",
-    time: "14:40",
-    description: "Участие в акции «Весенний марафон»",
-    amount: 250,
-  },
-  {
-    id: 3,
-    date: "2025-04-20",
-    time: "18:10",
-    description: "Промокод от друга",
-    amount: 50,
-  },
-];
+    header {
+      background-color: #2ecc71; /* зелёный */
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 24px;
+    }
 
-const backgroundImageURL =
-  "https://images.unsplash.com/photo-1604079628049-943db3ea7a8e?auto=format&fit=crop&w=1600&q=80";
+    .container {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+      border: 2px solid #2ecc71;
+      border-radius: 10px;
+    }
 
-export default function App() {
-  const total = bonusHistory.reduce((sum, b) => sum + b.amount, 0);
+    .bonus-entry {
+      border-bottom: 1px solid #2ecc71;
+      padding: 15px 0;
+    }
 
-  return (
-    <div
-      className="container"
-      style={{ backgroundImage: `url(${backgroundImageURL})` }}
-    >
-      <div className="card">
-        <h1 className="title">История бонусов</h1>
+    .bonus-entry:last-child {
+      border-bottom: none;
+    }
 
-        <table>
-          <thead>
-            <tr>
-              <th>№</th>
-              <th>Дата</th>
-              <th>Время</th>
-              <th>Описание</th>
-              <th>Бонусы</th>
-            </tr>
-          </thead>
-          <tbody>
-            {bonusHistory.map((bonus, index) => (
-              <tr key={bonus.id}>
-                <td>{index + 1}</td>
-                <td>{bonus.date}</td>
-                <td>{bonus.time}</td>
-                <td>{bonus.description}</td>
-                <td className="amount">+{bonus.amount}</td>
-              </tr>
-            ))}
-          </tbody>
-          <tfoot>
-            <tr>
-              <td colSpan="4" className="total-label">
-                Всего получено:
-              </td>
-              <td className="total-value">+{total}</td>
-            </tr>
-          </tfoot>
-        </table>
-      </div>
+    .bonus-date {
+      font-weight: bold;
+    }
+
+    .bonus-description {
+      margin: 5px 0;
+    }
+
+    .bonus-amount {
+      color: #2ecc71;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    История Получения Бонусов
+  </header>
+
+  <div class="container">
+    <div class="bonus-entry">
+      <div class="bonus-date">23 апреля 2025</div>
+      <div class="bonus-description">Завершено задание "Оставить отзыв"</div>
+      <div class="bonus-amount">+50 бонусов</div>
     </div>
-  );
-}
+
+    <div class="bonus-entry">
+      <div class="bonus-date">21 апреля 2025</div>
+      <div class="bonus-description">Приглашён друг: Иван</div>
+      <div class="bonus-amount">+100 бонусов</div>
+    </div>
+
+    <div class="bonus-entry">
+      <div class="bonus-date">18 апреля 2025</div>
+      <div class="bonus-description">Ежедневный вход в систему</div>
+      <div class="bonus-amount">+10 бонусов</div>
+    </div>
+  </div>
+
+</body>
+</html>
