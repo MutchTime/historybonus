@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ваш сайт</title>
+    <title>Личный кабинет</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,35 +13,29 @@
             color: black;
         }
         .header {
-            position: fixed;
-            top: 0;
-            right: 0;
             background-color: #4CAF50; /* Зеленый фон */
             color: white;
-            width: 100%;
             padding: 15px;
-            display: flex;
-            justify-content: flex-end;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            z-index: 10;
-        }
-        .header div {
-            margin-left: 20px;
-        }
-        .header .fio,
-        .header .contact {
-            font-size: 14px;
-            display: flex;
-            flex-direction: column;
-            text-align: right;
-        }
-        .header .fio span,
-        .header .contact span {
-            margin-bottom: 5px;
+            text-align: center;
         }
         .content {
-            margin-top: 100px; /* Чтобы не перекрывать контент шапкой */
+            margin-top: 40px; /* Отступ для контента */
             padding: 20px;
+        }
+        .user-info {
+            background-color: #f4f4f4; /* Светлый фон для блока с информацией */
+            padding: 20px;
+            text-align: left;
+            font-size: 16px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .user-info span {
+            display: block;
+            margin-bottom: 5px;
         }
         .return-button {
             position: fixed;
@@ -63,24 +57,27 @@
     </style>
 </head>
 <body>
+
     <div class="header">
-        <div class="fio">
-            <span>ФИО: Иван Иванов</span>
-            <span>Статус: Волонтер</span>
-            <span>Баллы: 120</span>
-        </div>
-        <div class="contact">
-            <span>Телефон: +7 123 456 7890</span>
-            <span>Email: ivanov@example.com</span>
-        </div>
+        <h1>Личный кабинет</h1>
     </div>
 
     <div class="content">
         <!-- Контент страницы -->
-        <p>Здесь будет содержимое вашего сайта.</p>
+        <p>Здесь будет содержимое вашего личного кабинета.</p>
+    </div>
+
+    <!-- Информация о пользователе, расположена снизу -->
+    <div class="user-info">
+        <span>ФИО: Иван Иванов</span>
+        <span>Статус: Волонтер</span>
+        <span>Баллы: 120</span>
+        <span>Телефон: +7 123 456 7890</span>
+        <span>Email: ivanov@example.com</span>
     </div>
 
     <!-- Кнопка для возврата на главный экран -->
     <button class="return-button" onclick="window.location.href='index.html';">Вернуться на главный экран</button>
+
 </body>
 </html>
