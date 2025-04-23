@@ -13,7 +13,7 @@
     }
 
     header {
-      background-color: #16a085;
+      background-color: #2ecc71;
       color: white;
       padding: 20px;
       text-align: center;
@@ -22,14 +22,14 @@
 
     .container {
       max-width: 800px;
-      margin: 30px auto 80px auto; /* Отступ снизу, чтобы кнопка не перекрывала контент */
+      margin: 30px auto 80px auto;
       padding: 20px;
-      border: 2px solid #16a085;
+      border: 2px solid #2ecc71;
       border-radius: 10px;
     }
 
     .bonus-entry {
-      border-bottom: 1px solid #16a085;
+      border-bottom: 1px solid #2ecc71;
       padding: 15px 0;
     }
 
@@ -39,6 +39,7 @@
 
     .bonus-date {
       font-weight: bold;
+      color: #333;
     }
 
     .bonus-description {
@@ -56,7 +57,7 @@
       left: 50%;
       transform: translateX(-50%);
       padding: 12px 24px;
-      background-color: #16a085;
+      background-color: #2ecc71;
       color: white;
       border: none;
       border-radius: 30px;
@@ -85,23 +86,23 @@
   </div>
 
   <!-- Зафиксированная кнопка -->
-  <a href="index.html" class="back-button">Вернуться на главную</a>
+  <a href="index.html" class="back-button">← Вернуться на главную</a>
 
   <script>
     async function fetchBonusHistory() {
       const data = [
         {
-          date: "23 апреля 2025",
+          datetime: "23 апреля 2025, 14:35",
           description: "Вам зачислено за задание «Оставить отзыв»",
           amount: "+50 бонусов"
         },
         {
-          date: "21 апреля 2025",
+          datetime: "21 апреля 2025, 09:12",
           description: "Вам зачислено за приглашение друга: Иван",
           amount: "+100 бонусов"
         },
         {
-          date: "18 апреля 2025",
+          datetime: "18 апреля 2025, 08:00",
           description: "Вам зачислено за ежедневный вход в систему",
           amount: "+10 бонусов"
         }
@@ -114,7 +115,7 @@
         const div = document.createElement("div");
         div.className = "bonus-entry";
         div.innerHTML = `
-          <div class="bonus-date">${entry.date}</div>
+          <div class="bonus-date">${entry.datetime}</div>
           <div class="bonus-description">${entry.description}</div>
           <div class="bonus-amount">${entry.amount}</div>
         `;
