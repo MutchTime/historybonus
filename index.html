@@ -21,21 +21,15 @@
         .content {
             margin-top: 40px; /* Отступ для контента */
             padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Две колонки */
+            gap: 20px; /* Расстояние между колонками */
         }
-        .user-info {
-            background-color: #f4f4f4; /* Светлый фон для блока с информацией */
-            padding: 20px;
-            text-align: left;
-            font-size: 16px;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-        }
-        .user-info span {
-            display: block;
-            margin-bottom: 5px;
+        .content div {
+            padding: 15px;
+            background-color: #f4f4f4; /* Светлый фон для каждого блока */
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         .return-button {
             position: fixed;
@@ -63,21 +57,21 @@
     </div>
 
     <div class="content">
-        <!-- Информация о пользователе -->
-        <span>ФИО: Иван Иванов</span><br>
-        <span>Статус: Волонтер</span><br>
-        <span>Баллы: 120</span><br>
-        <span>Телефон: +7 123 456 7890</span><br>
-        <span>Email: ivanov@example.com</span>
-    </div>
-
-    <!-- Информация о пользователе, расположена снизу -->
-    <div class="user-info">
-        <span>ФИО: Иван Иванов</span>
-        <span>Статус: Волонтер</span>
-        <span>Баллы: 120</span>
-        <span>Телефон: +7 123 456 7890</span>
-        <span>Email: ivanov@example.com</span>
+        <div>
+            <strong>ФИО:</strong> Иван Иванов
+        </div>
+        <div>
+            <strong>Статус:</strong> Волонтер
+        </div>
+        <div>
+            <strong>Баллы:</strong> 120
+        </div>
+        <div>
+            <strong>Телефон:</strong> +7 123 456 7890
+        </div>
+        <div>
+            <strong>Email:</strong> ivanov@example.com
+        </div>
     </div>
 
     <!-- Кнопка для возврата на главный экран -->
