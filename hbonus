@@ -1,0 +1,23 @@
+import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { CalendarDays, Coins } from "lucide-react";
+
+const bonusHistory = [
+  {
+    id: 1,
+    date: "2025-04-01",
+    description: "Бонус за регистрацию",
+    amount: 100,
+  },
+  {
+    id: 2,
+    date: "2025-04-10",
+    description: "Участие в акции «Весенний марафон»",
+    amount: 250,
+  },
+  {
+    id: 3,
+    date: "2025-04-20",
+    description: "Промокод от друга",
+    amount:
