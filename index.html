@@ -58,6 +58,22 @@
     button:hover {
       background-color: #1b5e20;
     }
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #2e7d32;
+      color: #ffffff;
+      padding: 0.75rem 1.25rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .back-to-top:hover {
+      background-color: #1b5e20;
+    }
   </style>
 </head>
 <body>
@@ -136,5 +152,9 @@
       </tbody>
     </table>
   </main>
+
+  <button class="back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
+    Вернуться на главный экран
+  </button>
 </body>
 </html>
