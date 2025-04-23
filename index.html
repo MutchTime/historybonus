@@ -1,4 +1,6 @@
+// src/App.jsx
 import React from "react";
+import "./App.css";
 
 const bonusHistory = [
   {
@@ -24,52 +26,50 @@ const bonusHistory = [
   },
 ];
 
-const backgroundImageURL = "https://images.unsplash.com/photo-1604079628049-943db3ea7a8e?auto=format&fit=crop&w=1600&q=80";
+const backgroundImageURL =
+  "https://images.unsplash.com/photo-1604079628049-943db3ea7a8e?auto=format&fit=crop&w=1600&q=80";
 
 export default function App() {
   const total = bonusHistory.reduce((sum, b) => sum + b.amount, 0);
 
   return (
     <div
-      className="min-h-screen bg-green-100 bg-cover bg-center p-6 flex items-center justify-center"
+      className="container"
       style={{ backgroundImage: `url(${backgroundImageURL})` }}
     >
-      <div className="backdrop-blur-sm bg-white/90 rounded-3xl p-8 shadow-2xl w-full max-w-5xl">
-        <h1 className="text-5xl font-bold text-green-700 mb-8 text-center drop-shadow-sm">История бонусов</h1>
+      <div className="card">
+        <h1 className="title">История бонусов</h1>
 
-        <div className="overflow-x-auto">
-          <table className="min-w-full text-sm sm:text-base text-gray-800 border-separate border-spacing-y-2">
-            <thead>
-              <tr className="bg-green-600 text-white rounded-xl">
-                <th className="py-3 px-5 rounded-l-xl text-left">№</th>
-                <th className="py-3 px-5 text-left">Дата</th>
-                <th className="py-3 px-5 text-left">Время</th>
-                <th className="py-3 px-5 text-left">Описание</th>
-                <th className="py-3 px-5 rounded-r-xl text-left">Бонусы</th>
+        <table>
+          <thead>
+            <tr>
+              <th>№</th>
+              <th>Дата</th>
+              <th>Время</th>
+              <th>Описание</th>
+              <th>Бонусы</th>
+            </tr>
+          </thead>
+          <tbody>
+            {bonusHistory.map((bonus, index) => (
+              <tr key={bonus.id}>
+                <td>{index + 1}</td>
+                <td>{bonus.date}</td>
+                <td>{bonus.time}</td>
+                <td>{bonus.description}</td>
+                <td className="amount">+{bonus.amount}</td>
               </tr>
-            </thead>
-            <tbody>
-              {bonusHistory.map((bonus, index) => (
-                <tr
-                  key={bonus.id}
-                  className="bg-green-50 hover:bg-green-100 transition rounded-xl shadow-md"
-                >
-                  <td className="py-3 px-5 font-semibold rounded-l-xl">{index + 1}</td>
-                  <td className="py-3 px-5">{bonus.date}</td>
-                  <td className="py-3 px-5">{bonus.time}</td>
-                  <td className="py-3 px-5">{bonus.description}</td>
-                  <td className="py-3 px-5 text-green-700 font-bold rounded-r-xl">+{bonus.amount}</td>
-                </tr>
-              ))}
-            </tbody>
-            <tfoot>
-              <tr className="bg-green-200 text-green-800 font-bold rounded-xl">
-                <td colSpan="4" className="py-3 px-5 text-right rounded-l-xl">Всего получено:</td>
-                <td className="py-3 px-5 rounded-r-xl">+{total}</td>
-              </tr>
-            </tfoot>
-          </table>
-        </div>
+            ))}
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colSpan="4" className="total-label">
+                Всего получено:
+              </td>
+              <td className="total-value">+{total}</td>
+            </tr>
+          </tfoot>
+        </table>
       </div>
     </div>
   );
