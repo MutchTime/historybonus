@@ -18,6 +18,19 @@
             padding: 20px;
             color: #ffffff;
             text-align: center;
+            position: relative;
+        }
+
+        .top-right-info {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            text-align: right;
+            color: #ffffff;
+        }
+
+        .top-right-info div {
+            margin: 3px 0;
         }
 
         .container {
@@ -25,31 +38,29 @@
             margin: 0 auto;
         }
 
-        .profile-info {
+        .profile-extra {
             background-color: #F1F1F1;
             padding: 20px;
-            margin-top: 20px;
+            margin-top: 50px;
             border-radius: 10px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .profile-info h2 {
+        .profile-extra h2 {
             margin-top: 0;
+            text-align: center;
         }
 
-        .profile-info p {
-            margin: 5px 0;
+        .profile-extra .info {
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
         }
 
         .section-title {
-            font-size: 18px;
             font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .profile-info .info {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
         }
 
         footer {
@@ -57,9 +68,7 @@
             color: #ffffff;
             text-align: center;
             padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            margin-top: 40px;
         }
     </style>
 </head>
@@ -67,26 +76,19 @@
 
 <header>
     <h1>Личный кабинет</h1>
+    <div class="top-right-info">
+        <div><strong>ФИО:</strong> Иванов Иван Иванович</div>
+        <div><strong>Кто ты:</strong> Волонтёр</div>
+        <div><strong>Баллы:</strong> 120</div>
+    </div>
 </header>
 
 <div class="container">
-    <div class="profile-info">
-        <h2>Информация о пользователе</h2>
+    <div class="profile-extra">
+        <h2>Дополнительная информация</h2>
         <div class="info">
-            <div class="section-title">ФИО:</div>
-            <div>Иванов Иван Иванович</div>
-        </div>
-        <div class="info">
-            <div class="section-title">Кто ты:</div>
-            <div>Волонтер</div>
-        </div>
-        <div class="info">
-            <div class="section-title">Количество баллов:</div>
-            <div>120</div>
-        </div>
-        <div class="info">
-            <div class="section-title">Что доступно:</div>
-            <div>Доступ к дополнительным материалам и привилегиям</div>
+            <div class="section-title">Доступно:</div>
+            <div>Доступ к материалам и привилегиям</div>
         </div>
         <div class="info">
             <div class="section-title">Телефон:</div>
